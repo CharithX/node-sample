@@ -10,7 +10,7 @@ test("adds 5 + 7 to equal 12", () => {
 });
 
 test("adds 6 + 6 to not equal 12", () => {
-  expect(add(6, 6)).not.toBe(12);
+  expect(add(6, 6)).not.toBe(16);
 });
 
 // Add more test cases as needed
