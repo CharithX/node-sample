@@ -49,6 +49,6 @@ jobs:
         context: .
         file: ./dockerfile # Path to your Dockerfile
         push: true
-        tags: charithdev/sum-node-app:v1.0.0.1
+        tags: charithdev/sum-node-app:v1.0.0.2
 
 
