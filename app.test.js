@@ -16,3 +16,6 @@ test("adds -1 + 5 to equal 4", () => {
 test("adds 0 + 0 to equal 0", () => {
   expect(add(0, 0)).toBe(0);
 });
+test("adds 10 + 20 to equal 25", () => {
+  expect(add(10, 20)).not.toBe(25);
+});
