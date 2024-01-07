@@ -49,6 +49,6 @@ jobs:
         context: .
         file: ./path/to/Dockerfile  # Path to your Dockerfile
         push: true
-       tags: charithdev/docker-ci-pipeline:latest
+        tags: charithdev/docker-ci-pipeline:latest
 
 

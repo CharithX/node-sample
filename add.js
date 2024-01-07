@@ -1,4 +1,4 @@
-// add.js
+// add.js  sum two numbers
 function add(a, b) {
   return a + b;
 }
