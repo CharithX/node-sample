@@ -1,12 +1,12 @@
 pipeline {
     agent any
     
-  stage('Checkout') {
-    steps {
+         stage('Checkout') {
+             steps {
         // Checkout the code from the GitHub repository
-        git branch: 'master', url: 'https://github.com/CharithX/node-sample'
-    }
-}
+                 git branch: 'master', url: 'https://github.com/CharithX/node-sample'
+           }
+        }
         
         stage('Install dependencies') {
             steps {
@@ -45,4 +45,4 @@ pipeline {
             // Add your cleanup steps here
         }
     }
-}
+
