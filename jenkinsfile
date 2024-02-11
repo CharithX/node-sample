@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-      tools {
+    tools {
         nodejs 'Nodejs'
     }
     
@@ -22,13 +22,19 @@ pipeline {
                 }
             }
         }
-                
+        
+        stage('Build Docker image') {
+            steps {
+                // Build Docker image
+                sh 'docker build -t my-node-app .'
+            }
+        }
+        
         stage('Deploy') {
-        steps {
-        sh 'npm start &'
-        sh 'sleep 10' // Wait for the server to start
-        sh 'pkill -f "node app.js"' // Terminate the npm start command
-    }
-}
+            steps {
+                // Run Docker container
+                sh 'docker run -d --name my-node-container -p 3000:3000 my-node-app'
+            }
+        }
     }
 }
