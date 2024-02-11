@@ -25,9 +25,8 @@ pipeline {
                 
         stage('Deploy') {
         steps {
-        sh 'npm start &'
-        sh 'sleep 10' // Wait for the server to start
-        sh 'pkill -f "node app.js"' // Terminate the npm start command
+        sh 'npm start'
+        
     }
 }
     }
