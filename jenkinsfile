@@ -1,9 +1,8 @@
 pipeline {
     agent any
-    
-       tools {
-        nodejs 'NodeJS'
-        npm 'npm'
+
+      tools {
+        nodejs 'Nodejs'
     }
     
     stages {
@@ -15,7 +14,12 @@ pipeline {
         
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                // Use the correct tool type for npm
+                script {
+                    def npmTool = tool 'npm'
+                    env.PATH = "${npmTool}:${env.PATH}"
+                    sh 'npm install'
+                }
             }
         }
                 
