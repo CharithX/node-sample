@@ -1,48 +1,23 @@
 pipeline {
     agent any
     
-         stage('Checkout') {
-             steps {
-        // Checkout the code from the GitHub repository
-                 git branch: 'master', url: 'https://github.com/CharithX/node-sample'
-           }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/CharithX/node-sample'
+            }
         }
         
         stage('Install dependencies') {
             steps {
-                // Install Node.js dependencies
                 sh 'npm install'
             }
         }
-        
-        stage('Build') {
-            steps {
-                // Perform any build steps here (e.g., compiling TypeScript, bundling assets)
-                // This might not be necessary for a simple Node.js application
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                // Run tests if you have any
-                // Replace the placeholder with your actual test command
-                sh 'npm test'
-            }
-        }
-        
+                
         stage('Deploy') {
             steps {
-                // Start your Node.js application
-                // Replace the placeholder with your actual start command
                 sh 'npm start'
             }
         }
     }
-    
-    post {
-        always {
-            // Clean up or perform any post-build actions here
-            // Add your cleanup steps here
-        }
-    }
-
+}
