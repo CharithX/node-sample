@@ -18,5 +18,6 @@ Follow these steps to set up and run the project locally.
  **Clone the Repository:**
 
    ```bash
+   mkdir test
    git clone https://github.com/CharithX/node-sample
-   cd your-project
+   cd node-sample
